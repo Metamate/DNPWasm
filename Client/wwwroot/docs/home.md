@@ -1,76 +1,56 @@
-## Index
-
-Welcome to DNP1!
-
-#### Topics
+## Topics
 
 1. **Course introduction**
     - Course Overview
     - Introduction to C# & .NET
-        - Basic syntax, types, properties
+        - Basic syntax, classes, structs, types, properties, assemblies, namespaces, etc.
     - IDE, SDK Installation
     - Editor Essentials + Debugging
-2. **C# Stuff (rename)**
+2. **C#**
     - More basic C# stuff
-3. **C# Stuff (rename)**
+    - Iterators, Collections, etc. https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/
+    - Generics, Attributes, Partial classes, (Indexers) etc.
+3. **C#**
     - Class libs
-    - Extension methods
+    - (Extension methods)
     - Lambda expressions
     - Delegates / events
-4. **C# Stuff (rename)**
-    - More cool C# stuff
-5. **Asynchronous Programming**
-    - Async/await
-6. **Consuming web services**
+    - (Reflection, operator overloading, conversions)
+4. **Blazor**
+    - Introduction to Blazor
+    - Exercise: Create TODO App
+5. **Blazor**
+    - User Management
+    - Authentication
+    - Authorization
+    - Security, JWT
+6. **Blazor**
+    - Dependency Injection (bliver det brugt før? skal måske også behandles ifm. web api) https://www.youtube.com/watch?v=IKD2-MAkXyQ
+    - Application State
+    - Course Assignment Introduction
+7. **Web Services**
     - Web services & REST
     - Test Client (Postman / Rider)
+    - Asynchronous Programming
+        - Async/await
     - Serialization
     - Working with a HTTP client
-7. **Exposing Web Services**
+8. **Web Services**
     - Introduction to ASP.NET (brief MVC + Razor Pages?)
     - Implementing Web APIs
     - Web API design
-8. **Data Access**
+    - HATEOAS
+    - Application State (er der plads?)
+    - Logging
+9. **Data Access**
     - Entity Framework
-    - LINQ (include more theory and usage)
-    - More SQL examples?
-9. **Web Applications**
-    - Blazor
-10. **More Web Applications (rename)**
-    - Blazor
-11. **User Management & Security**
-    - Common Software Vulnerabilities
-    - Authentication
-    - Authorization
+    - LINQ
+10. **Data Access**
+    - More LINQ
+    - Loading Relational Data
+11. **Course Assignment**
+    - Deployment
+    - Work on course assigment
 12. **Recap, Course Wrap-Up & Exam Info**
-
-#### Small topics to fit in:
-- Dependency Injection
-- Logging
-- Attributes
-- Indexers?
-- Partial classes?
-- Operator overloading?
-- Conversions?
-- More good general programming concepts to include here: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/
-
-#### Limbo:
-- Generics
-- Application State & Deployment (including Blazor state; change detecting handling (inotifypropertychanged esque))
-- Unit Testing
-- Remote Procedure Calls (gRPC)
-- GraphQL
-- JWT (could consider under security)
-- Worker services
-- HATEOAS (exposing web services)
-- Reflection
-- Automapper (for exposing web services)
-- Sockets (MAYBE keep if it's still SEP3 requirement)
-
-#### Removed:
-- .NET API (introduce the APIs, when they need them)
-- Threads (can mention briefly in "Async Programming")
-- Razor Pages (mostly gone)
----
 
 Link to Course Description
