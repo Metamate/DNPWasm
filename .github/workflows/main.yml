@@ -10,21 +10,23 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Client
+
     steps:
     - uses: actions/checkout@v2
-      working-directory: Client
 
     - name: Publish app
       run: dotnet publish -c Release
-      working-directory: Client
 
     - name: Rewrite base href
       uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
       with:
         html_path: ${{ env.PUBLISH_DIR }}/index.html
         base_href: /DNP/
-      working-directory: Client
 
     - name: GitHub Pages
       if: success()
@@ -34,4 +36,3 @@ jobs:
         build_dir: ${{ env.PUBLISH_DIR }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      working-directory: Client
