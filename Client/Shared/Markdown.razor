@@ -1,0 +1,54 @@
+@using Markdig
+@inject HttpClient Http
+@inject IJSRuntime JsRuntime
+@((MarkupString) BuildHtmlFromMarkdown(Content))
+
+@code
+{
+    [Parameter]
+    public string Content { get; set; }
+
+    [Parameter]
+    public string Url { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Content == null)
+            Content = string.IsNullOrEmpty(Url)
+                ? "Content or Url property is not set or invalid"
+                : await InitContentFromUrl();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JsRuntime.InvokeVoidAsync("Prism.highlightAll");
+    }
+
+    // TODO: Sanitize before returning (but only if we change to user generated content...)
+    private static string BuildHtmlFromMarkdown(string value)
+    {
+        return value == null ? "" : Markdig.Markdown.ToHtml(
+            markdown: value,
+            pipeline: new MarkdownPipelineBuilder()
+                .UseAdvancedExtensions()
+                .Build()
+        );
+    }
+
+    private async Task<string> InitContentFromUrl()
+    {
+        try
+        {
+            var httpResponse = await Http.GetAsync(Url);
+            return httpResponse.IsSuccessStatusCode ?
+                await httpResponse.Content.ReadAsStringAsync() : httpResponse.ReasonPhrase;
+        }
+        catch (Exception e)
+        {
+            //TODO: Log
+            Console.WriteLine(e.ToString());
+        }
+        return string.Empty;
+    }
+
+}
