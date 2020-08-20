@@ -53,4 +53,4 @@
     - Work on course assigment
 12. **Recap, Course Wrap-Up & Exam Info**
 
-Link to Course Description
+[Link to Course Description]
